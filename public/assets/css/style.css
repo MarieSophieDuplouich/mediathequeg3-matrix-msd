@@ -1,0 +1,965 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/* cursor matrix Marie-Sophie Duplouich*/
+
+section{
+    position: relative;
+    width: 100%;
+    height:100vh;
+    background : #001300;
+    overflow: hidden;
+    cursor: default;
+    animation: animateBg 10s linear infinite;
+
+}
+
+
+@keyframes animateBg{
+
+    0%
+    {
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+
+section p {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+section p span {
+
+    position: relative;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00ff0a11;
+    transition: 2s;
+}
+
+section p span:hover{
+    transition : 0s;
+    font-size : 4em;
+    color:#00ff0a;
+    z-index:100;
+    text-shadow: 0 0 10px #00ff0a,
+    0 0 50px #00ff0a,
+    0 0 100px #00ff0a;
+
+}
+
+/* cursor matrix Marie-Sophie Duplouich fin */
+/* Conteneur des boutons */
+.admin-actions {
+    display: flex;
+    justify-content: center;
+    /* centre horizontalement */
+    gap: 15px;
+    /* espace entre les boutons */
+    flex-wrap: wrap;
+    /* passe à la ligne si trop étroit */
+    margin-bottom: 30px;
+}
+
+/* Styles généraux pour tous les boutons */
+.btn-admin,
+.btn-add-media {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    background-color: #c4d10f;
+    color: #434040;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 12px;
+    /* coins arrondis */
+    width: 220px;
+    height: 60px;
+    padding: 0 10px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+    /* Ombre blanche */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Couleurs des boutons jaunes */
+.btn-beige1 {
+    background-color: #FFF9C4;
+}
+
+.btn-beige2 {
+    background-color: #FFF9C4;
+}
+
+.btn-beige3 {
+    background-color: #FFF9C4;
+}
+
+.btn-beige4 {
+    background-color: #FFF9C4;
+}
+
+.btn-beige5 {
+    background-color: #FFF9C4;
+}
+
+/* Reset et base */
+
+
+       table {
+        width: 60%;              /* Réduit la largeur */
+        border-collapse: collapse;
+        margin: 15px auto;       /* Centre horizontalement */
+        font-size: 14px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px 12px;
+        text-align: center;
+    }
+    th {
+        background-color: #f4f4f4;
+    }
+    .page-header h1 {
+        margin-bottom: 20px;
+        text-align: center;      /* Centrage du titre principal */
+    }
+    .actions a {
+        margin-right: 8px;
+        color: white;    
+    }
+
+   .actions {
+    text-align: center; /* Centre les boutons */
+    padding: 10px; /* Espacement intérieur */
+    vertical-align: middle; /* Alignement vertical au centre */
+    white-space: nowrap; /* Empêche le retour à la ligne */
+}
+
+/* Style général pour tous les boutons d'action */
+.action-btn {
+    display: flex; /* Affichage en ligne-bloc */
+    padding: 8px 12px; /* Espacement intérieur */
+    margin: 2px 4px; /* Espacement entre les boutons */
+    background-color: #434040; /* Fond sombre (cohérent avec votre design) */
+    color: white; /* Texte blanc */
+    border: 1px solid #b0b02a; /* Bordure jaune */
+    border-radius: 5px; /* Coins arrondis */
+    text-decoration: none; /* Supprime le soulignement des liens */
+    font-size: 14px; /* Taille de police */
+    font-weight: 500; /* Texte semi-gras */
+    cursor: pointer; /* Curseur pointer */
+    transition: all 0.3s ease; /* Transition douce */
+    vertical-align: middle; /* Alignement vertical */
+}
+
+.media-link {
+
+    color : #c4d10f;
+}
+    
+    /* Centrage des sous-titres et du lien */
+    h2, h3, .center {
+        text-align: center;
+    }
+    .message-contact {
+        text-align: center;
+    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #c4d10f;
+    --primary-hover: #b89301;
+    --secondary-color: #9e9c96;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+    --warning-color: #f59e0b;
+    --background-color: #434040;
+    --text-color: #c4d10f;
+    --border-color: #b0b02a;
+    --white: #302e2e;
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #434040;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header et Navigation */
+.header {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.nav-brand a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: #c4d10f;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 2rem 1rem; /* Réduit le padding sur mobile */
+}
+
+/* Grille responsive */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* S'adapte automatiquement */
+    grid-auto-rows: minmax(450px, auto); /* Hauteur minimale pour les cartes */
+    gap: 15px; /* Espacement réduit sur mobile */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem; /* Padding latéral pour éviter le débordement */
+}
+
+/* Carte responsive */
+.media-card {
+    background-color: #434040;
+    border: 1px solid #b0b02a;
+    border-radius: 8px;
+    padding: 15px; /* Padding réduit sur mobile */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 100%; /* Prend toute la hauteur de la cellule */
+    min-width: 0; /* Permet aux cartes de rétrécir en dessous de 165px si nécessaire */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btn.btn-primary {
+    margin-top: auto;
+    align-self: center;
+}
+
+.media-info p {
+    text-align: justify;
+    margin: 0.5rem 0; /* Espacement réduit */
+}
+
+/* Image responsive */
+.img-index {
+    width: 100%; /* Prend toute la largeur disponible */
+    max-width: 150px; /* Limite la largeur maximale */
+    height: auto; /* Garde les proportions */
+    margin: 0 auto; /* Centre l'image */
+    display: block; /* Évite les espaces en dessous */
+}
+
+/* Media Queries pour ajuster selon la taille d'écran */
+@media (max-width: 768px) {
+    .media-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 10px;
+    }
+    .media-card {
+        padding: 10px;
+        height: auto;
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .media-grid {
+        grid-template-columns: 1fr; /* Une colonne sur mobile */
+    }
+    .media-card {
+        min-height: 350px;
+    }
+}
+/* Espacement entre media-header et media-card1 */
+.media-header {
+    margin-bottom: 30px; /* Espace en dessous du header */
+    content : center;
+}
+/* Carte principale */
+.media-card1 {
+background-color: #434040; /* Fond sombre */
+border: 1px solid #b0b02a; /* Bordure jaune-vert */
+border-radius: 8px; /* Coins arrondis */
+padding: 15px; /* Espacement intérieur */
+display: flex; /* Active le mode flexbox - CORRECTION ICI */
+flex-direction: column; /* Empile les enfants verticalement */
+width: 100%; /* Prend toute la largeur disponible */
+}
+
+/* Conteneur pour l'image et le texte à droite */
+.encadrement {
+display: flex; /* Active le mode flexbox */
+flex-direction: row; /* Aligne les enfants horizontalement (image à gauche, texte à droite) */
+gap: 20px; /* Espacement entre l'image et le texte */
+width: 100%; /* Prend toute la largeur disponible */
+}
+
+/* Style de l'image */
+.img-detail {
+display: block; /* Affiche l'image comme un bloc */
+width: 300px; /* Largeur fixe de l'image */
+height: auto; /* Hauteur automatique pour garder le ratio */
+border-radius: 8px; /* Coins arrondis */
+flex-shrink: 0; /* Empêche l'image de rétrécir */
+}
+
+/* Conteneur pour le type, l'auteur et la description (à droite de l'image) */
+.media-text {
+display: flex; /* Active le mode flexbox */
+flex-direction: column; /* Empile les enfants verticalement */
+flex: 1; /* Prend tout l'espace restant */
+min-width: 0; /* Permet de rétrécir si nécessaire */
+}
+
+/* Style du type (ex: "Film", "Livre") */
+.type {
+color: #b0b02a; /* Texte jaune */
+font-weight: bold; /* Texte en gras */
+margin-bottom: 5px; /* Espacement sous le type */
+}
+
+/* Style de l'auteur */
+.auteur {
+color: #b0b02a; /* Texte jaune*/
+margin-bottom: 10px; /* Espacement sous l'auteur */
+}
+
+/* Style de la description */
+.media-description {
+color: #b0b02a; /* Texte jaune */
+text-align: justify; /* Texte justifié */
+overflow-wrap: break-word; /* Retour à la ligne si mot trop long */
+}
+
+/* Responsive : sur mobile (écran < 768px) */
+@media (max-width: 768px) {
+.encadrement {
+flex-direction: column; /* Empile l'image et le texte verticalement */
+ }
+.img-detail {
+width: 100%; /* Image prend toute la largeur */
+margin-bottom: 15px; /* Espacement sous l'image */
+ }
+.media-text {
+width: 100%; /* Prend toute la largeur */
+margin-top: 0; /* Pas d'espace en haut */
+ }
+}
+
+.media-action {
+    text-align: center;
+    background-color: #b0b02a; /* Fond jaune */
+    color: white; /* Texte blanc */
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 2rem auto;
+    flex-wrap: wrap;
+}
+
+.page-link {
+    background-color: #72a807;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px; /* coins arrondis */
+    text-decoration: none;
+    min-width: 36px;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.page-link:hover:not(.current) {
+    background-color: #476904;
+}
+
+.page-link.current {
+    background-color: #476904;
+    font-weight: bold;
+}
+
+
+
+/* formulaire dashboard */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #b0b02a;
+    border-radius: 5px;
+    background-color: #434040;
+}
+
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.btn {
+    background-color: #b0b02a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.genre-fields, .type-fields {
+    display: none; /* Masquer par défaut */
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+    border-radius: 300px; /* Arrondi des coins */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.welcome-message {
+    font-size: 1.25rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+}
+
+/* Boutons */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+
+
+/* Style pour la classe media-detail-title - TITRE EN JAUNE */
+.media-detail-title {
+    color:  #c4d10f; /* Couleur jaune pour le titre */
+    font-size: 18px; /* Taille de police */
+    font-weight: bold; /* Texte en gras */
+ 
+}
+
+/* Style pour les liens dans media-detail-title */
+.media-detail-title a {
+    color:  #c4d10f; /* Couleur jaune pour le lien */
+    transition: color 0.3s ease; /* Transition douce */
+    display:flex; 
+}
+
+.search-image {
+
+   align-items: center;
+}
+
+/* .btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background: #4b5563;
+    transform: translateY(-1px);
+}
+
+.btn-full {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Sections */
+.features {
+    padding: 4rem 0;
+    background: #434040;
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #c4d10f;
+}
+
+
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    text-align: center;
+    width:200px;
+    height:300px;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    background: #434040;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: var(--success-color);
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Getting Started */
+/* .getting-started {
+    padding: 4rem 0;
+    background: var(--background-color);
+} */
+
+/* .getting-started h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+} */
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.step {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+}
+
+/* Page Header */
+.page-header {
+    background: var(--white);
+    font-style : #c4d10f;
+    padding: 2rem 0;
+    border-bottom : 1px solid var(--border-color);
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+}
+
+/* Content Grid */
+.content {
+    padding: 2rem 0;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat (5, 1fr);
+    grid-template-rows: repeat(4, auto); /* 4 lignes, hauteur automatique */
+    gap: 3rem;
+
+}
+
+.content-main {
+    background: #434040;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow);
+}
+
+.search-bar {
+    text-align: center; /* Centre le contenu de la barre de recherche */
+    margin-top: rem; /* Ajoute un peu d'espace au-dessus de la barre de recherche */
+    color: #c4d10f;
+}
+
+.search-bar input[type="text"] {
+    padding: 0.5rem; /* Rendre le champ de texte plus agréable */
+    font-size: 1rem; /* Taille de police */
+    background: #302e2e;
+    color: #c4d10f;
+}
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-box {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow);
+}
+
+.info-box h4 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+/* Formulaires */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Authentification */
+.auth-container {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.auth-card {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.auth-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Messages Flash */
+.alert {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+}
+
+.alert-success {
+    background-color: #d1fae5;
+    border-color: var(--success-color);
+    color: #065f46;
+}
+
+.alert-error {
+    background-color: #fee2e2;
+    border-color: var(--error-color);
+    color: #991b1b;
+}
+
+.alert-warning {
+    background-color: #fef3c7;
+    border-color: var(--warning-color);
+    color: #92400e;
+}
+
+/* Page d'erreur */
+.error-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-color);
+}
+
+.error-content {
+    text-align: center;
+    max-width: 500px;
+}
+
+.error-icon {
+    font-size: 4rem;
+    color: var(--error-color);
+    margin-bottom: 1rem;
+}
+
+.error-content h1 {
+    font-size: 6rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.error-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.error-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+}
+
+.error-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Footer */
+.footer {
+    background: #302e2e;
+    color: #c4d10f;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: auto;
+}
+
+.footer-content p {
+    margin-bottom: 0.5rem;
+    
+}
+
+/* Code blocks */
+pre {
+    background: #f8f8f8;
+    color : black;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+code {
+    background: #f1f5f9;
+    color : black;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .auth-card {
+        padding: 2rem;
+    }
+    
+    .features h2,
+    .getting-started h2 {
+        font-size: 2rem;
+    }
+    
+    .steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .error-actions {
+        flex-direction: column;
+    }
+} 
