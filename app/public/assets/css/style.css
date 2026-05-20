@@ -112,7 +112,7 @@ th {
     /* Fond sombre (cohérent avec votre design) */
     color: white;
     /* Texte blanc */
-    border: 1px solid #b0b02a;
+    border: 1px solid var(--primary-color);
     /* Bordure jaune */
     border-radius: 5px;
     /* Coins arrondis */
@@ -132,7 +132,7 @@ th {
 
 .media-link {
 
-    color: #c4d10f;
+    color: var(--primary-color);
 }
 
 /* Centrage des sous-titres et du lien */
@@ -393,7 +393,7 @@ section p span:hover {
 /* Carte responsive */
 .media-card {
     background-color: #434040;
-    border: 1px solid #b0b02a;
+    border: 1px solid var(--primary-color);
     border-radius: 8px;
     padding: 15px;
     /* Padding réduit sur mobile */
@@ -469,7 +469,7 @@ section p span:hover {
 .media-card1 {
     background-color: #434040;
     /* Fond sombre */
-    border: 1px solid #b0b02a;
+    border: 1px solid  var(--primary-color);
     /* Bordure jaune-vert */
     border-radius: 8px;
     /* Coins arrondis */
@@ -533,7 +533,7 @@ section p span:hover {
 
 /* Style de l'auteur */
 .auteur {
-    color: #b0b02a;
+    color:  var(--primary-color);
     /* Texte jaune*/
     margin-bottom: 10px;
     /* Espacement sous l'auteur */
@@ -541,7 +541,7 @@ section p span:hover {
 
 /* Style de la description */
 .media-description {
-    color: #b0b02a;
+    color: var(--primary-color);
     /* Texte jaune */
     text-align: justify;
     /* Texte justifié */
@@ -573,8 +573,8 @@ section p span:hover {
 
 .media-action {
     text-align: center;
-    background-color: #b0b02a;
-    /* Fond jaune */
+    background-color: var(--primary-color);
+    /* Fond vert fluo */
     color: white;
     /* Texte blanc */
     padding: 10px;
@@ -605,11 +605,11 @@ section p span:hover {
 }
 
 .page-link:hover:not(.current) {
-    background-color: #476904;
+    background-color: var(--primary-color);
 }
 
 .page-link.current {
-    background-color: #476904;
+    background-color: var(--primary-color);
     font-weight: bold;
 }
 
@@ -620,7 +620,7 @@ form {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    border: 1px solid #b0b02a;
+    border: 1px solid var(--primary-color);
     border-radius: 5px;
     background-color: #434040;
 }
@@ -644,7 +644,7 @@ textarea {
 }
 
 .btn {
-    background-color: #b0b02a;
+    background-color: var(--primary-color);
     color: #ffffff;
     border: none;
     padding: 10px 15px;
@@ -653,7 +653,7 @@ textarea {
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: var(--primary-hover);
 }
 
 .genre-fields,
@@ -676,6 +676,7 @@ textarea {
     font-size: 3rem;
     margin-bottom: 1rem;
     font-weight: 700;
+    color :  var(--primary-color);
 }
 
 .hero-subtitle {
@@ -719,8 +720,8 @@ textarea {
 
 /* Style pour la classe media-detail-title - TITRE EN JAUNE */
 .media-detail-title {
-    color: #c4d10f;
-    /* Couleur jaune pour le titre */
+    color: var(--primary-color);
+    /* Couleur vertfluo pour le titre */
     font-size: 18px;
     /* Taille de police */
     font-weight: bold;
@@ -730,8 +731,8 @@ textarea {
 
 /* Style pour les liens dans media-detail-title */
 .media-detail-title a {
-    color: #c4d10f;
-    /* Couleur jaune pour le lien */
+    color: var(--primary-color);
+    /* Couleur vertflu pour le lien */
     transition: color 0.3s ease;
     /* Transition douce */
     display: flex;
@@ -752,7 +753,7 @@ textarea {
     text-align: center;
     margin-bottom: 3rem;
     font-size: 2.5rem;
-    color: #c4d10f;
+    color: var(--primary-color);
 }
 
 
@@ -823,15 +824,15 @@ textarea {
 
 /* Page Header */
 .page-header {
-    background: var(--white);
-    font-style: #c4d10f;
+    background: var(--background-color);
+    font-style: var(--primary-color);
     padding: 2rem 0;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--primary-color);
 }
 
 .page-header h1 {
     font-size: 2.5rem;
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 
 /* Content Grid */
@@ -860,7 +861,7 @@ textarea {
     /* Centre le contenu de la barre de recherche */
     margin-top: rem;
     /* Ajoute un peu d'espace au-dessus de la barre de recherche */
-    color: #c4d10f;
+    color: var(--primary-color);
 }
 
 .search-bar input[type="text"] {
@@ -869,7 +870,7 @@ textarea {
     font-size: 1rem;
     /* Taille de police */
     background: #302e2e;
-    color: #c4d10f;
+    color: var(--primary-color);
 }
 
 .sidebar {
