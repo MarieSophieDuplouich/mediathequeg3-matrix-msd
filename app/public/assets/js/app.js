@@ -223,6 +223,8 @@ function ajax(url, options = {}) {
 } 
 /* Main Content */
 
+/* Main Content */
+
 const matrixContainer = document.querySelector('.matrix');
 const characters = 'FILM LIVRE JEUX VIDEO'; // Caractères à afficher
 
@@ -233,12 +235,12 @@ function createColumn() {
     // Crée un nombre aléatoire de caractères
     const columnLength = Math.floor(Math.random() * 10) + 2; // Entre 10 et 30 caractères
 
-    let columnText = '';
     for (let i = 0; i < columnLength; i++) {
-        columnText += characters.charAt(Math.floor(Math.random() * characters.length)) + '<br>';
+        let char = characters.charAt(Math.floor(Math.random() * characters.length));
+        column.appendChild(document.createTextNode(char));
+        column.appendChild(document.createElement('br'));
     }
 
-    column.innerHTML = columnText;
     column.style.left = Math.random() * 100 + 'vw'; // Position horizontale aléatoire
 
     matrixContainer.appendChild(column);
