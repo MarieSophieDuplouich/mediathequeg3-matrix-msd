@@ -1,0 +1,9 @@
+RewriteEngine On
+
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+# Cacher les fichiers sensibles
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>

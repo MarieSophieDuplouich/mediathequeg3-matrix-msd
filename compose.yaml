@@ -1,0 +1,34 @@
+services:
+  bdd:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: php_mvc_app
+      MYSQL_USER: grp3
+      MYSQL_PASSWORD: root
+    volumes:
+      - db_data_media:/var/lib/mysql
+
+  web:
+    build: ./web
+    ports:
+      - "8080:80"
+    environment:
+      HOST: localhost:8080
+    volumes:
+      - ./app:/var/www/html
+    depends_on:
+      - bdd
+
+  pma:
+    image: phpmyadmin
+    environment:
+      PMA_HOST: bdd
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "8081:80"
+    depends_on:
+      - bdd
+
+volumes:
+  db_data_media:
