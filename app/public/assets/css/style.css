@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* outline: orangered 1px solid; */
 }
 
 /* Conteneur des boutons */
@@ -308,6 +309,8 @@ section.content-about .info-box p:last-child {
     letter-spacing: normal;
     color: var(--primary-color);
 }
+
+
 
 /* hauteur h4 */
 .horaires-hn {
@@ -999,6 +1002,15 @@ textarea {
 }
 
 /* Formulaires */
+
+/* Form contact */
+/* p-contact paragraphe de la page contact */
+.p-contact{
+    text-align:center;
+}
+
+
+/* Autres formulaires (dashboard, auth, etc.) */ *
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -1007,7 +1019,7 @@ textarea {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 
 .form-group input,
@@ -1219,8 +1231,6 @@ code {
     .error-actions {
         flex-direction: column;
     }
-
-    /* Responsive about.php A propos */
 
     /* Responsive about.php A propos */
     @media (max-width: 768px) {
