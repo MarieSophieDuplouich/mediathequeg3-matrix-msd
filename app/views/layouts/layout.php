@@ -79,7 +79,7 @@
 
     <script src="<?php e(url('assets/js/app.js')); ?>"></script>
     <!-- MS animation du curseur ici et en Javascript -->
-    <script>
+    <!-- <script>
         let paragraph = document.querySelector('.text');
         let text = 'Médiathèque G3'.repeat(300);
 
@@ -107,7 +107,7 @@
                 headerParagraph.appendChild(span);
             }
         });
-    </script>
+    </script> -->
 
 
     <!-- MS animation du curseur ici et en Javascript fin-->

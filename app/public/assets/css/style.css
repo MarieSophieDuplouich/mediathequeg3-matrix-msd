@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Conteneur des boutons */
 .admin-actions {
     display: flex;
@@ -142,17 +148,13 @@ h3,
     text-align: center;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 
 
 :root {
     --primary-color: #00ff0a;
-    --primary-hover: #b89301;
+    --primary-hover: #33a3ee;
     --secondary-color: #9e9c96;
     --success-color: #10b981;
     --error-color: #ef4444;
@@ -223,7 +225,6 @@ section p span:hover {
 }
 
 
-/* about.php A propos MS — layout grid avec image building et horaires */
 /* about.php A propos MS — layout grid avec image building et horaires */
 .container-about {
     max-width: 1200px;
@@ -303,10 +304,11 @@ section.content-about .info-box p:last-child {
     line-height: 2;
 }
 
-.catalogue-paragraph strong{
+.catalogue-paragraph strong {
     letter-spacing: normal;
-    color:var(--primary-color);
+    color: var(--primary-color);
 }
+
 /* hauteur h4 */
 .horaires-hn {
     text-align: center;
@@ -325,33 +327,72 @@ section.content-about .info-box p:last-child {
 /* Animation Matrix pour le header */
 .header {
     position: relative;
-    overflow: hidden;
     height: 550px;
+    /* overflow: hidden; */
+    background: #001300;
 }
 
+/* fond animation */
 .header-animation {
+
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     background: #001300;
+    z-index: 1;
+    /* ← en dessous de la navbar */
 }
 
+/* conteneur texte */
 .header-text {
-    position: relative;
-    z-index: 2;
+
+    position: absolute;
+    inset: 0;
+
     display: flex;
     flex-wrap: wrap;
+
+    font-family: monospace;
+    line-height: 1;
+
+    z-index: 1;
 }
 
+/* lettres */
 .header-text span {
+
     position: relative;
-    width: 20px;
-    height: 20px;
+
+    width: 30px;
+    height: 30px;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     color: #00ff0a11;
+
+    transition: 1.5s;
+
+    cursor: default;
+}
+
+/* GROS EFFET HOVER */
+.header-text span:hover {
+
+    transition: 0s;
+
+    font-size: 4em;
+
+    color: #00ff00;
+
+    z-index: 1000;
+
+    text-shadow:
+        0 0 10px #00ff00,
+        0 0 50px #00ff00,
+        0 0 100px #00ff00;
 }
 
 .navbar {
@@ -360,7 +401,7 @@ section.content-about .info-box p:last-child {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0 2rem;
 }
 
 
@@ -599,7 +640,7 @@ section.content-about .info-box p:last-child {
 
 /* Style du type (ex: "Film", "Livre") */
 .type {
-    color: #b0b02a;
+    color: var(--primary-color);
     /* Texte jaune */
     font-weight: bold;
     /* Texte en gras */
@@ -669,7 +710,7 @@ section.content-about .info-box p:last-child {
 }
 
 .page-link {
-    background-color: #72a807;
+    background-color: var(--primary-color);
     color: white;
     padding: 8px 12px;
     border-radius: 4px;
