@@ -1,5 +1,3 @@
-
-
 /* Conteneur des boutons */
 .admin-actions {
     display: flex;
@@ -20,7 +18,7 @@
     justify-content: center;
     text-align: center;
     text-decoration: none;
-    background-color: #c4d10f;
+    background-color: var(--primary-color);
     color: #434040;
     font-weight: bold;
     font-size: 14px;
@@ -56,7 +54,6 @@
 }
 
 /* Reset et base */
-
 
 table {
     width: 60%;
@@ -131,7 +128,6 @@ th {
 }
 
 .media-link {
-
     color: var(--primary-color);
 }
 
@@ -186,12 +182,9 @@ section {
     overflow: hidden;
     cursor: default;
     animation: animateBg 10s linear infinite;
-    
 }
 
-
 @keyframes animateBg {
-
     0% {
         filter: hue-rotate(0deg);
     }
@@ -201,15 +194,12 @@ section {
     }
 }
 
-
 section p {
     display: flex;
     flex-wrap: wrap;
-
 }
 
 section p span {
-
     position: relative;
     width: 30px;
     height: 30px;
@@ -223,12 +213,83 @@ section p span {
 section p span:hover {
     transition: 0s;
     font-size: 4em;
-    color: #00ff0a;
+    color: var(--primary-color);
     z-index: 100;
-    text-shadow: 0 0 10px #00ff0a,
-        0 0 50px #00ff0a,
-        0 0 100px #00ff0a;
+    text-shadow: 0 0 10px var(--primary-color),
+        0 0 50px var(--primary-color),
+        0 0 100px var(--primary-color);
+}
 
+
+/* about.php A propos MS — layout grid avec image building et horaires */
+
+section.content-about .content-grid {
+    scroll-behavior: smooth;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 48px;
+    align-items: start;
+}
+
+/* supprime le fond gris et le box-shadow du content-main sur about */
+section.content-about .content-main {
+    background: transparent;
+    box-shadow: none;
+    padding: 2rem;
+    
+}
+
+/* sidebar about */
+section.content-about .sidebar {
+    position: sticky;
+    top: 20px;
+}
+
+section.content-about .info-box {
+    background: rgba(0, 40, 0, 0.7);
+    border: 1px solid rgba(0, 255, 65, 0.33);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+    padding: 0;
+    /* override le padding global */
+}
+
+/* Image du bâtiment */
+section.content-about .info-box .mediatheque-building {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.33);
+}
+
+/* Horaires — bloque le flex des <p> de l'animation */
+section.content-about .info-box p {
+    display: block;
+    margin: 4px 16px;
+    padding: 6px 12px;
+}
+
+section.content-about .info-box p:last-child {
+    margin-bottom: 16px;
+}
+
+/* height → min-height pour ne pas couper le contenu */
+section.content-about .content-main {
+    min-height: 700px;
+    padding: 40px 0;
+}
+
+/* Paragraphe catalogue */
+.catalogue-paragraph {
+ margin-top:20px;
+}
+
+/* hauteur h4  */
+.horaires-hn {
+   text-align: center;
+   margin-top: 20px;
 }
 
 /* Layout */
@@ -269,9 +330,7 @@ section p span:hover {
     justify-content: center;
     align-items: center;
     color: #00ff0a11;
-    
 }
-
 
 .navbar {
     position: relative;
@@ -310,8 +369,6 @@ section p span:hover {
     z-index: 1000;
 }
 
-
-
 .nav-menu li:hover::before {
     background: #1f5378;
 }
@@ -344,7 +401,6 @@ section p span:hover {
 
 .nav-menu li:hover::after {
     background: #2982b9;
-
 }
 
 .nav-menu li a {
@@ -356,8 +412,6 @@ section p span:hover {
     transition: 0.5s;
 }
 
-
-
 .nav-menu li:hover a {
     color: #fff;
 }
@@ -367,11 +421,11 @@ section p span:hover {
 }
 
 
-
 /* Main Content */
 .main-content {
     flex: 1;
     padding: 2rem 1rem;
+    background-color: #2e3133;
     /* Réduit le padding sur mobile */
 }
 
@@ -469,7 +523,7 @@ section p span:hover {
 .media-card1 {
     background-color: #434040;
     /* Fond sombre */
-    border: 1px solid  var(--primary-color);
+    border: 1px solid var(--primary-color);
     /* Bordure jaune-vert */
     border-radius: 8px;
     /* Coins arrondis */
@@ -533,7 +587,7 @@ section p span:hover {
 
 /* Style de l'auteur */
 .auteur {
-    color:  var(--primary-color);
+    color: var(--primary-color);
     /* Texte jaune*/
     margin-bottom: 10px;
     /* Espacement sous l'auteur */
@@ -614,7 +668,6 @@ section p span:hover {
 }
 
 
-
 /* formulaire dashboard */
 form {
     max-width: 600px;
@@ -624,7 +677,6 @@ form {
     border-radius: 5px;
     background-color: #434040;
 }
-
 
 label {
     display: block;
@@ -676,7 +728,7 @@ textarea {
     font-size: 3rem;
     margin-bottom: 1rem;
     font-weight: 700;
-    color :  var(--primary-color);
+    color: var(--primary-color);
 }
 
 .hero-subtitle {
@@ -701,7 +753,6 @@ textarea {
 }
 
 /* Boutons */
-
 .btn {
     display: inline-flex;
     align-items: center;
@@ -716,8 +767,6 @@ textarea {
     font-size: 1rem;
 }
 
-
-
 /* Style pour la classe media-detail-title - TITRE EN JAUNE */
 .media-detail-title {
     color: var(--primary-color);
@@ -726,7 +775,6 @@ textarea {
     /* Taille de police */
     font-weight: bold;
     /* Texte en gras */
-
 }
 
 /* Style pour les liens dans media-detail-title */
@@ -739,7 +787,6 @@ textarea {
 }
 
 .search-image {
-
     align-items: center;
 }
 
@@ -755,8 +802,6 @@ textarea {
     font-size: 2.5rem;
     color: var(--primary-color);
 }
-
-
 
 .features-grid {
     display: grid;
@@ -792,7 +837,6 @@ textarea {
 }
 
 /* Getting Started */
-
 
 .steps {
     display: grid;
@@ -842,11 +886,10 @@ textarea {
 
 .content-grid {
     display: grid;
-    grid-template-columns: repeat (5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(4, auto);
     /* 4 lignes, hauteur automatique */
     gap: 3rem;
-
 }
 
 .content-main {
@@ -1041,7 +1084,7 @@ textarea {
 /* Footer */
 .footer {
     background: #302e2e;
-    color: #c4d10f;
+    color: var(--primary-color);
     text-align: center;
     padding: 2rem 0;
     margin-top: auto;
@@ -1049,7 +1092,6 @@ textarea {
 
 .footer-content p {
     margin-bottom: 0.5rem;
-
 }
 
 /* Code blocks */
@@ -1112,5 +1154,20 @@ code {
 
     .error-actions {
         flex-direction: column;
+    }
+
+    /* Responsive about.php A propos */
+    section.content .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section.content .sidebar {
+        position: static;
+    }
+
+    /* FIX mobile : texte lisible sur iPhone SE — désactive l'effet matrix */
+    section.content p {
+        display: block;
+        /* annule le flex qui colle les mots */
     }
 }
