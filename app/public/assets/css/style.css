@@ -1005,12 +1005,230 @@ textarea {
 
 /* Form contact */
 /* p-contact paragraphe de la page contact */
-.p-contact{
-    text-align:center;
+.container-contact {
+
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
 }
 
+.content-grid-contact {
 
-/* Autres formulaires (dashboard, auth, etc.) */ *
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+
+    align-items: start;
+}
+
+.content-main-contact {
+
+    background: rgba(0, 20, 0, 0.95);
+
+    border: 1px solid rgba(0, 255, 0, 0.25);
+
+    border-radius: 18px;
+
+    padding: 2.5rem;
+
+    box-shadow:
+        0 0 15px rgba(0, 255, 0, 0.08),
+        0 0 40px rgba(0, 255, 0, 0.04);
+
+    backdrop-filter: blur(8px);
+}
+
+.p-contact {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    line-height: 1.8;
+}
+
+.content-main-contact h2 {
+
+    text-align: center;
+
+    font-size: 2rem;
+
+    margin-bottom: 1rem;
+
+    color: var(--primary-color);
+
+    text-shadow:
+        0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.contact-form {
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Groupes */
+.contact-form .form-group {
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label */
+.contact-form label {
+
+    margin-bottom: 0.7rem;
+
+    color: var(--primary-color);
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+/* Inputs */
+.contact-form input,
+.contact-form textarea {
+
+    width: 100%;
+
+    padding: 1rem;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(0,255,0,0.25);
+
+    background: rgba(0, 0, 0, 0.45);
+
+    color: #ffffff;
+
+    font-size: 1rem;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.2s ease;
+}
+
+/* Focus */
+.contact-form input:focus,
+.contact-form textarea:focus {
+
+    outline: none;
+
+    border-color: var(--primary-color);
+
+    box-shadow:
+        0 0 10px rgba(0,255,0,0.35),
+        0 0 20px rgba(0,255,0,0.15);
+
+    transform: translateY(-2px);
+}
+
+/* Textarea */
+.contact-form textarea {
+
+    resize: vertical;
+
+    min-height: 180px;
+}
+
+/* Bouton */
+.contact-form .btn {
+
+    align-self: center;
+
+    min-width: 240px;
+
+    padding: 1rem 2rem;
+
+    border-radius: 14px;
+
+    font-weight: bold;
+
+    font-size: 1rem;
+
+    letter-spacing: 1px;
+
+    background: linear-gradient(
+        135deg,
+        #00ff00,
+        #00aa33
+    );
+
+    color: #001300;
+
+    box-shadow:
+        0 0 15px rgba(0,255,0,0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Hover btn */
+.contact-form .btn:hover {
+
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 0 25px rgba(0,255,0,0.45),
+        0 0 50px rgba(0,255,0,0.15);
+}
+
+/* Sidebar-contact */
+.sidebar-contact {
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Box infos*/
+.info-box {
+
+    background: rgba(0, 20, 0, 0.95);
+
+    border: 1px solid rgba(0,255,0,0.18);
+
+    border-radius: 16px;
+
+    padding: 1.8rem;
+
+    box-shadow:
+        0 0 15px rgba(0,255,0,0.06);
+}
+
+/* Titres sidebar form contact */
+.info-box h4 {
+
+    margin-bottom: 1rem;
+
+    color: var(--primary-color);
+
+    text-align: center;
+
+    font-size: 1.2rem;
+}
+
+/* TEXTES SIDEBAR form contact */
+.darkmodep {
+
+    color: #d7d7d7;
+
+    line-height: 1.8;
+
+    margin-bottom: 0.8rem;
+}
+
+/* ICONES form contact */
+.darkmodep i {
+
+    color: var(--primary-color);
+
+    margin-right: 0.7rem;
+}
+
+/* Autres formulaires (dashboard, auth, etc.) */
 .form-group {
     margin-bottom: 1.5rem;
 }

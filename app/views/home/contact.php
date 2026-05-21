@@ -39,7 +39,7 @@
             </div>
             
             
-            <div class="sidebar">
+            <div class="sidebar-contact">
                 <div class="info-box">
                     <h4>Informations de contact</h4>
                     <p class="darkmodep"><i class="fas fa-envelope"></i> contact@example.com</p>
