@@ -5,13 +5,13 @@
 </div>
 
 <section class="content-about">
-    <div class="container">  
+    <div class="container-about">  
         <div class="content-grid">
             <div class="content-main">
                 <h2>Bienvenue dans notre médiathèque !</h2>
                 <h3>Une offre riche et variée</h3>
                 
-                <p class="catalogue-paragraph">Notre catalogue propose de nombreux <strong>livres,</strong>, <strong>films</strong> et <strong>jeux vidéo</strong>.
+                <p class="catalogue-paragraph">Notre catalogue propose de nombreux <strong>livres,</strong><strong>films</strong> et <strong>jeux vidéo</strong>.
                     Grâce à une interface claire et adaptée à tous les écrans, chaque membre peut naviguer aisément depuis son ordinateur ou son mobile.
                     Notre médiathèque propose également un bar à chats, où vous pourrez profiter d'un moment de détente en caressant les félins tout en savourant une boisson.
                     De plus, nous sommes situés dans une zone bénéficiant du dispositif Angela : si vous êtes victime de harcèlement de rue, notre équipe est là pour vous apporter aide et soutien.

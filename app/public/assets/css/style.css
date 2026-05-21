@@ -148,6 +148,8 @@ h3,
     box-sizing: border-box;
 }
 
+
+
 :root {
     --primary-color: #00ff0a;
     --primary-hover: #b89301;
@@ -222,9 +224,24 @@ section p span:hover {
 
 
 /* about.php A propos MS — layout grid avec image building et horaires */
+/* about.php A propos MS — layout grid avec image building et horaires */
+.container-about {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
+/* autoscroll about */
+section.content-about {
+    min-height: 100vh;
+    overflow-y: auto;
+    padding: 40px 0;
+}
 
 section.content-about .content-grid {
-    scroll-behavior: smooth;
     display: grid;
     grid-template-columns: 1fr 320px;
     gap: 48px;
@@ -236,22 +253,26 @@ section.content-about .content-main {
     background: transparent;
     box-shadow: none;
     padding: 2rem;
-    
+    min-height: auto;
 }
 
 /* sidebar about */
 section.content-about .sidebar {
     position: sticky;
     top: 20px;
+    align-self: start;
 }
 
+/* scroll interne sidebar */
 section.content-about .info-box {
     background: rgba(0, 40, 0, 0.7);
     border: 1px solid rgba(0, 255, 65, 0.33);
     border-radius: 4px;
-    overflow: hidden;
+    overflow-y: auto;
     box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
     padding: 0;
+    max-height: 85vh;
+    scrollbar-width: thin;
     /* override le padding global */
 }
 
@@ -275,22 +296,22 @@ section.content-about .info-box p:last-child {
     margin-bottom: 16px;
 }
 
-/* height → min-height pour ne pas couper le contenu */
-section.content-about .content-main {
-    min-height: 700px;
-    padding: 40px 0;
-}
-
 /* Paragraphe catalogue */
 .catalogue-paragraph {
- margin-top:20px;
+    margin-top: 20px;
+    letter-spacing: 0.55px;
+    line-height: 2;
 }
 
-/* hauteur h4  */
-.horaires-hn {
-   text-align: center;
-   margin-top: 20px;
+.catalogue-paragraph strong{
+    letter-spacing: normal;
 }
+/* hauteur h4 */
+.horaires-hn {
+    text-align: center;
+    margin-top: 20px;
+}
+
 
 /* Layout */
 .container {
@@ -1157,17 +1178,39 @@ code {
     }
 
     /* Responsive about.php A propos */
-    section.content .content-grid {
-        grid-template-columns: 1fr;
+
+    /* Responsive about.php A propos */
+    @media (max-width: 768px) {
+
+        .container-about {
+            padding: 0 1rem;
+            overflow-x: hidden;
+        }
+
+        section.content-about {
+            min-height: auto;
+            overflow-y: visible;
+        }
+
+        section.content-about .content-grid {
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        section.content-about .sidebar {
+            position: static;
+        }
+
+        section.content-about .info-box {
+            max-height: none;
+            overflow: visible;
+        }
+
+        section.content-about .content-main {
+            min-height: auto;
+            padding: 1rem;
+        }
+
     }
 
-    section.content .sidebar {
-        position: static;
-    }
-
-    /* FIX mobile : texte lisible sur iPhone SE — désactive l'effet matrix */
-    section.content p {
-        display: block;
-        /* annule le flex qui colle les mots */
-    }
 }
