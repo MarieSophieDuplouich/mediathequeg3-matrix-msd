@@ -1,5 +1,3 @@
-
-
 /* Conteneur des boutons */
 .admin-actions {
     display: flex;
@@ -20,7 +18,7 @@
     justify-content: center;
     text-align: center;
     text-decoration: none;
-    background-color: #c4d10f;
+    background-color: var(--primary-color);
     color: #434040;
     font-weight: bold;
     font-size: 14px;
@@ -56,7 +54,6 @@
 }
 
 /* Reset et base */
-
 
 table {
     width: 60%;
@@ -112,7 +109,7 @@ th {
     /* Fond sombre (cohérent avec votre design) */
     color: white;
     /* Texte blanc */
-    border: 1px solid #b0b02a;
+    border: 1px solid var(--primary-color);
     /* Bordure jaune */
     border-radius: 5px;
     /* Coins arrondis */
@@ -131,8 +128,7 @@ th {
 }
 
 .media-link {
-
-    color: #c4d10f;
+    color: var(--primary-color);
 }
 
 /* Centrage des sous-titres et du lien */
@@ -151,6 +147,8 @@ h3,
     padding: 0;
     box-sizing: border-box;
 }
+
+
 
 :root {
     --primary-color: #00ff0a;
@@ -186,12 +184,9 @@ section {
     overflow: hidden;
     cursor: default;
     animation: animateBg 10s linear infinite;
-    
 }
 
-
 @keyframes animateBg {
-
     0% {
         filter: hue-rotate(0deg);
     }
@@ -201,15 +196,12 @@ section {
     }
 }
 
-
 section p {
     display: flex;
     flex-wrap: wrap;
-
 }
 
 section p span {
-
     position: relative;
     width: 30px;
     height: 30px;
@@ -223,13 +215,104 @@ section p span {
 section p span:hover {
     transition: 0s;
     font-size: 4em;
-    color: #00ff0a;
+    color: var(--primary-color);
     z-index: 100;
-    text-shadow: 0 0 10px #00ff0a,
-        0 0 50px #00ff0a,
-        0 0 100px #00ff0a;
-
+    text-shadow: 0 0 10px var(--primary-color),
+        0 0 50px var(--primary-color),
+        0 0 100px var(--primary-color);
 }
+
+
+/* about.php A propos MS — layout grid avec image building et horaires */
+/* about.php A propos MS — layout grid avec image building et horaires */
+.container-about {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
+/* autoscroll about */
+section.content-about {
+    min-height: 100vh;
+    overflow-y: auto;
+    padding: 40px 0;
+}
+
+section.content-about .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 48px;
+    align-items: start;
+}
+
+/* supprime le fond gris et le box-shadow du content-main sur about */
+section.content-about .content-main {
+    background: transparent;
+    box-shadow: none;
+    padding: 2rem;
+    min-height: auto;
+}
+
+/* sidebar about */
+section.content-about .sidebar {
+    position: sticky;
+    top: 20px;
+    align-self: start;
+}
+
+/* scroll interne sidebar */
+section.content-about .info-box {
+    background: rgba(0, 40, 0, 0.7);
+    border: 1px solid rgba(0, 255, 65, 0.33);
+    border-radius: 4px;
+    overflow-y: auto;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+    padding: 0;
+    max-height: 85vh;
+    scrollbar-width: thin;
+    /* override le padding global */
+}
+
+/* Image du bâtiment */
+section.content-about .info-box .mediatheque-building {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.33);
+}
+
+/* Horaires — bloque le flex des <p> de l'animation */
+section.content-about .info-box p {
+    display: block;
+    margin: 4px 16px;
+    padding: 6px 12px;
+}
+
+section.content-about .info-box p:last-child {
+    margin-bottom: 16px;
+}
+
+/* Paragraphe catalogue */
+.catalogue-paragraph {
+    margin-top: 20px;
+    letter-spacing: 0.55px;
+    line-height: 2;
+}
+
+.catalogue-paragraph strong{
+    letter-spacing: normal;
+    color:var(--primary-color);
+}
+/* hauteur h4 */
+.horaires-hn {
+    text-align: center;
+    margin-top: 20px;
+}
+
 
 /* Layout */
 .container {
@@ -269,9 +352,7 @@ section p span:hover {
     justify-content: center;
     align-items: center;
     color: #00ff0a11;
-    
 }
-
 
 .navbar {
     position: relative;
@@ -310,8 +391,6 @@ section p span:hover {
     z-index: 1000;
 }
 
-
-
 .nav-menu li:hover::before {
     background: #1f5378;
 }
@@ -344,7 +423,6 @@ section p span:hover {
 
 .nav-menu li:hover::after {
     background: #2982b9;
-
 }
 
 .nav-menu li a {
@@ -356,8 +434,6 @@ section p span:hover {
     transition: 0.5s;
 }
 
-
-
 .nav-menu li:hover a {
     color: #fff;
 }
@@ -367,11 +443,11 @@ section p span:hover {
 }
 
 
-
 /* Main Content */
 .main-content {
     flex: 1;
     padding: 2rem 1rem;
+    background-color: #2e3133;
     /* Réduit le padding sur mobile */
 }
 
@@ -393,7 +469,7 @@ section p span:hover {
 /* Carte responsive */
 .media-card {
     background-color: #434040;
-    border: 1px solid #b0b02a;
+    border: 1px solid var(--primary-color);
     border-radius: 8px;
     padding: 15px;
     /* Padding réduit sur mobile */
@@ -469,7 +545,7 @@ section p span:hover {
 .media-card1 {
     background-color: #434040;
     /* Fond sombre */
-    border: 1px solid #b0b02a;
+    border: 1px solid var(--primary-color);
     /* Bordure jaune-vert */
     border-radius: 8px;
     /* Coins arrondis */
@@ -533,7 +609,7 @@ section p span:hover {
 
 /* Style de l'auteur */
 .auteur {
-    color: #b0b02a;
+    color: var(--primary-color);
     /* Texte jaune*/
     margin-bottom: 10px;
     /* Espacement sous l'auteur */
@@ -541,7 +617,7 @@ section p span:hover {
 
 /* Style de la description */
 .media-description {
-    color: #b0b02a;
+    color: var(--primary-color);
     /* Texte jaune */
     text-align: justify;
     /* Texte justifié */
@@ -573,8 +649,8 @@ section p span:hover {
 
 .media-action {
     text-align: center;
-    background-color: #b0b02a;
-    /* Fond jaune */
+    background-color: var(--primary-color);
+    /* Fond vert fluo */
     color: white;
     /* Texte blanc */
     padding: 10px;
@@ -605,14 +681,13 @@ section p span:hover {
 }
 
 .page-link:hover:not(.current) {
-    background-color: #476904;
+    background-color: var(--primary-color);
 }
 
 .page-link.current {
-    background-color: #476904;
+    background-color: var(--primary-color);
     font-weight: bold;
 }
-
 
 
 /* formulaire dashboard */
@@ -620,11 +695,10 @@ form {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    border: 1px solid #b0b02a;
+    border: 1px solid var(--primary-color);
     border-radius: 5px;
     background-color: #434040;
 }
-
 
 label {
     display: block;
@@ -644,7 +718,7 @@ textarea {
 }
 
 .btn {
-    background-color: #b0b02a;
+    background-color: var(--primary-color);
     color: #ffffff;
     border: none;
     padding: 10px 15px;
@@ -653,7 +727,7 @@ textarea {
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: var(--primary-hover);
 }
 
 .genre-fields,
@@ -676,6 +750,7 @@ textarea {
     font-size: 3rem;
     margin-bottom: 1rem;
     font-weight: 700;
+    color: var(--primary-color);
 }
 
 .hero-subtitle {
@@ -700,7 +775,6 @@ textarea {
 }
 
 /* Boutons */
-
 .btn {
     display: inline-flex;
     align-items: center;
@@ -715,30 +789,26 @@ textarea {
     font-size: 1rem;
 }
 
-
-
 /* Style pour la classe media-detail-title - TITRE EN JAUNE */
 .media-detail-title {
-    color: #c4d10f;
-    /* Couleur jaune pour le titre */
+    color: var(--primary-color);
+    /* Couleur vertfluo pour le titre */
     font-size: 18px;
     /* Taille de police */
     font-weight: bold;
     /* Texte en gras */
-
 }
 
 /* Style pour les liens dans media-detail-title */
 .media-detail-title a {
-    color: #c4d10f;
-    /* Couleur jaune pour le lien */
+    color: var(--primary-color);
+    /* Couleur vertflu pour le lien */
     transition: color 0.3s ease;
     /* Transition douce */
     display: flex;
 }
 
 .search-image {
-
     align-items: center;
 }
 
@@ -752,10 +822,8 @@ textarea {
     text-align: center;
     margin-bottom: 3rem;
     font-size: 2.5rem;
-    color: #c4d10f;
+    color: var(--primary-color);
 }
-
-
 
 .features-grid {
     display: grid;
@@ -792,7 +860,6 @@ textarea {
 
 /* Getting Started */
 
-
 .steps {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -823,15 +890,15 @@ textarea {
 
 /* Page Header */
 .page-header {
-    background: var(--white);
-    font-style: #c4d10f;
+    background: var(--background-color);
+    font-style: var(--primary-color);
     padding: 2rem 0;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--primary-color);
 }
 
 .page-header h1 {
     font-size: 2.5rem;
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 
 /* Content Grid */
@@ -841,11 +908,10 @@ textarea {
 
 .content-grid {
     display: grid;
-    grid-template-columns: repeat (5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(4, auto);
     /* 4 lignes, hauteur automatique */
     gap: 3rem;
-
 }
 
 .content-main {
@@ -860,7 +926,7 @@ textarea {
     /* Centre le contenu de la barre de recherche */
     margin-top: rem;
     /* Ajoute un peu d'espace au-dessus de la barre de recherche */
-    color: #c4d10f;
+    color: var(--primary-color);
 }
 
 .search-bar input[type="text"] {
@@ -869,7 +935,7 @@ textarea {
     font-size: 1rem;
     /* Taille de police */
     background: #302e2e;
-    color: #c4d10f;
+    color: var(--primary-color);
 }
 
 .sidebar {
@@ -1040,7 +1106,7 @@ textarea {
 /* Footer */
 .footer {
     background: #302e2e;
-    color: #c4d10f;
+    color: var(--primary-color);
     text-align: center;
     padding: 2rem 0;
     margin-top: auto;
@@ -1048,7 +1114,6 @@ textarea {
 
 .footer-content p {
     margin-bottom: 0.5rem;
-
 }
 
 /* Code blocks */
@@ -1112,4 +1177,41 @@ code {
     .error-actions {
         flex-direction: column;
     }
+
+    /* Responsive about.php A propos */
+
+    /* Responsive about.php A propos */
+    @media (max-width: 768px) {
+
+        .container-about {
+            padding: 0 1rem;
+            overflow-x: hidden;
+        }
+
+        section.content-about {
+            min-height: auto;
+            overflow-y: visible;
+        }
+
+        section.content-about .content-grid {
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        section.content-about .sidebar {
+            position: static;
+        }
+
+        section.content-about .info-box {
+            max-height: none;
+            overflow: visible;
+        }
+
+        section.content-about .content-main {
+            min-height: auto;
+            padding: 1rem;
+        }
+
+    }
+
 }
