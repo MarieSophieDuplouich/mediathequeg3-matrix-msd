@@ -221,35 +221,39 @@ function ajax(url, options = {}) {
             throw error;
         });
 } 
-/* Main Content */
+/* Animation Header text cursor médiathèque G3 */
 
-/* Main Content */
+     function createMatrixText(selector, content, repeat = 300) {
 
-const matrixContainer = document.querySelector('.matrix');
-const characters = 'FILM LIVRE JEUX VIDEO'; // Caractères à afficher
+    const paragraph = document.querySelector(selector);
 
-function createColumn() {
-    const column = document.createElement('div');
-    column.classList.add('column');
+    if (!paragraph) return;
 
-    // Crée un nombre aléatoire de caractères
-    const columnLength = Math.floor(Math.random() * 10) + 2; // Entre 10 et 30 caractères
+    const text = (content + ' ').repeat(repeat);
 
-    for (let i = 0; i < columnLength; i++) {
-        let char = characters.charAt(Math.floor(Math.random() * characters.length));
-        column.appendChild(document.createTextNode(char));
-        column.appendChild(document.createElement('br'));
-    }
+    text.split('').forEach(char => {
 
-    column.style.left = Math.random() * 100 + 'vw'; // Position horizontale aléatoire
+        if (char === ' ') {
 
-    matrixContainer.appendChild(column);
+            paragraph.appendChild(
+                document.createTextNode(' ')
+            );
 
-    // Définir la durée de l'animation en fonction de la hauteur de la colonne
-    const fallDuration = Math.random() * 2 + 3; // Entre 3 et 5 secondes
-    column.style.animationDuration = fallDuration + 's';
+        } else {
+
+            const span = document.createElement('span');
+
+            span.textContent = char;
+
+            paragraph.appendChild(span);
+        }
+    });
 }
 
-// Crée plusieurs colonnes
-setInterval(createColumn, 500); // Crée une nouvelle colonne toutes les 500 ms
 
+/* HEADER */
+createMatrixText('.header-text', 'Médiathèque G3');
+
+
+/* SECTION */
+createMatrixText('.text', 'Médiathèque G3');
