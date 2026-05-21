@@ -488,7 +488,7 @@ section.content-about .info-box p:last-child {
 .main-content {
     flex: 1;
     padding: 2rem 1rem;
-    background-color: #2e3133;
+    background-color: #001300;
     /* Réduit le padding sur mobile */
 }
 
@@ -956,7 +956,7 @@ textarea {
 }
 
 .content-main {
-    background: #434040;
+    background-color: #001300;
     padding: 2rem;
     border-radius: 0.75rem;
     box-shadow: var(--shadow);
@@ -968,6 +968,7 @@ textarea {
     margin-top: rem;
     /* Ajoute un peu d'espace au-dessus de la barre de recherche */
     color: var(--primary-color);
+    background-color: #001300;
 }
 
 .search-bar input[type="text"] {
