@@ -305,6 +305,7 @@ section.content-about .info-box p:last-child {
 
 .catalogue-paragraph strong{
     letter-spacing: normal;
+    color:var(--primary-color);
 }
 /* hauteur h4 */
 .horaires-hn {
