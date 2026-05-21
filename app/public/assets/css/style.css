@@ -224,7 +224,6 @@ section p span:hover {
 
 
 /* about.php A propos MS — layout grid avec image building et horaires */
-/* about.php A propos MS — layout grid avec image building et horaires */
 .container-about {
     max-width: 1200px;
     margin: 0 auto;
@@ -599,7 +598,7 @@ section.content-about .info-box p:last-child {
 
 /* Style du type (ex: "Film", "Livre") */
 .type {
-    color: #b0b02a;
+    color: var(--primary-color);
     /* Texte jaune */
     font-weight: bold;
     /* Texte en gras */
@@ -669,7 +668,7 @@ section.content-about .info-box p:last-child {
 }
 
 .page-link {
-    background-color: #72a807;
+    background-color: var(--primary-color);
     color: white;
     padding: 8px 12px;
     border-radius: 4px;
