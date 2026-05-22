@@ -4,7 +4,7 @@
     </div>
 </div>
 
-<section class="content">
+<section class="content" id="contact-form">
     <div class="container-contact">  
         <div class="content-grid-contact">
             <div class="content-main-contact">
