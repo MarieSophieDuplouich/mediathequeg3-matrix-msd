@@ -4,12 +4,12 @@
     </div>
 </div>
 
-<section class="content">
-    <div class="container">  
-        <div class="content-grid">
-            <div class="content-main">
+<section class="content" id="contact-form">
+    <div class="container-contact">  
+        <div class="content-grid-contact">
+            <div class="content-main-contact">
                 <h2>Nous contacter</h2> 
-                <p>N'hésitez pas à nous envoyer un message. Nous vous répondrons dans les plus brefs délais.</p>
+                <p class="p-contact">N'hésitez pas à nous envoyer un message. Nous vous répondrons dans les plus brefs délais.</p>
                 
                 <form method="POST" class="contact-form">
                     <input type="hidden" name="csrf_token" value="<?php echo csrf_token(); ?>">
@@ -39,7 +39,7 @@
             </div>
             
             
-            <div class="sidebar">
+            <div class="sidebar-contact">
                 <div class="info-box">
                     <h4>Informations de contact</h4>
                     <p class="darkmodep"><i class="fas fa-envelope"></i> contact@example.com</p>

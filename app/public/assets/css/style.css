@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* outline: orangered 1px solid; */
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* Conteneur des boutons */
@@ -39,25 +44,11 @@
 }
 
 /* Couleurs des boutons jaunes */
-.btn-beige1 {
-    background-color: #FFF9C4;
-}
-
-.btn-beige2 {
-    background-color: #FFF9C4;
-}
-
-.btn-beige3 {
-    background-color: #FFF9C4;
-}
-
-.btn-beige4 {
-    background-color: #FFF9C4;
-}
-
-.btn-beige5 {
-    background-color: #FFF9C4;
-}
+.btn-beige1 { background-color: #FFF9C4; }
+.btn-beige2 { background-color: #FFF9C4; }
+.btn-beige3 { background-color: #FFF9C4; }
+.btn-beige4 { background-color: #FFF9C4; }
+.btn-beige5 { background-color: #FFF9C4; }
 
 /* Reset et base */
 
@@ -148,10 +139,6 @@ h3,
     text-align: center;
 }
 
-
-
-
-
 :root {
     --primary-color: #00ff0a;
     --primary-hover: #33a3ee;
@@ -189,13 +176,8 @@ section {
 }
 
 @keyframes animateBg {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-
-    100% {
-        filter: hue-rotate(360deg);
-    }
+    0%   { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
 }
 
 section p {
@@ -225,7 +207,11 @@ section p span:hover {
 }
 
 
-/* about.php A propos MS — layout grid avec image building et horaires */
+/* ============================================
+   about.php A propos MS
+   layout grid avec image building et horaires
+   ============================================ */
+
 .container-about {
     max-width: 1200px;
     margin: 0 auto;
@@ -235,9 +221,10 @@ section p span:hover {
     scrollbar-width: thin;
 }
 
-/* autoscroll about */
+/* autoscroll about — override section global */
 section.content-about {
     min-height: 100vh;
+    height: auto;
     overflow-y: auto;
     padding: 40px 0;
 }
@@ -316,7 +303,10 @@ section.content-about .info-box p:last-child {
 }
 
 
-/* Layout */
+/* ============================================
+   Layout général
+   ============================================ */
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -334,7 +324,6 @@ section.content-about .info-box p:last-child {
 
 /* fond animation */
 .header-animation {
-
     position: absolute;
     inset: 0;
     width: 100%;
@@ -346,49 +335,34 @@ section.content-about .info-box p:last-child {
 
 /* conteneur texte */
 .header-text {
-
     position: absolute;
     inset: 0;
-
     display: flex;
     flex-wrap: wrap;
-
     font-family: monospace;
     line-height: 1;
-
     z-index: 1;
 }
 
 /* lettres */
 .header-text span {
-
     position: relative;
-
     width: 30px;
     height: 30px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     color: #00ff0a11;
-
     transition: 1.5s;
-
     cursor: default;
 }
 
 /* GROS EFFET HOVER */
 .header-text span:hover {
-
     transition: 0s;
-
     font-size: 4em;
-
     color: #00ff00;
-
     z-index: 1000;
-
     text-shadow:
         0 0 10px #00ff00,
         0 0 50px #00ff00,
@@ -987,18 +961,21 @@ textarea {
 }
 
 .info-box {
-    background: var(--white);
-    padding: 1.5rem;
-    border-radius: 0.75rem;
-    box-shadow: var(--shadow);
+    background: rgba(0, 20, 0, 0.95);
+    border: 1px solid rgba(0, 255, 0, 0.18);
+    border-radius: 16px;
+    padding: 1.8rem;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.06);
 }
 
 .info-box h4 {
     margin-bottom: 1rem;
     color: var(--primary-color);
+    text-align: center;
+    font-size: 1.2rem;
 }
 
-/* Formulaires */
+/* Formulaires — dashboard, auth, etc. */
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -1007,7 +984,7 @@ textarea {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 
 .form-group input,
@@ -1027,7 +1004,166 @@ textarea {
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-/* Authentification */
+
+/* ============================================
+   contact.php — Form contact MS
+   ============================================ */
+
+/* autoscroll contact — override section global */
+section.content {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+    padding: 40px 0;
+}
+
+/* container spécifique contact */
+.container-contact {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+/* grid contact : formulaire à gauche, sidebar à droite */
+.content-grid-contact {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* zone formulaire */
+.content-main-contact {
+    background: rgba(0, 20, 0, 0.95);
+    border: 1px solid rgba(0, 255, 0, 0.25);
+    border-radius: 18px;
+    padding: 2.5rem;
+    box-shadow:
+        0 0 15px rgba(0, 255, 0, 0.08),
+        0 0 40px rgba(0, 255, 0, 0.04);
+    backdrop-filter: blur(8px);
+}
+
+/* titre h2 contact */
+.content-main-contact h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+/* p-contact paragraphe intro de la page contact */
+.p-contact {
+    text-align: center;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+/* formulaire contact */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Groupes */
+.contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label */
+.contact-form label {
+    margin-bottom: 0.7rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Inputs */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 0, 0.25);
+    background: rgba(0, 0, 0, 0.45);
+    color: #ffffff;
+    font-size: 1rem;
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.2s ease;
+}
+
+/* Focus */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow:
+        0 0 10px rgba(0, 255, 0, 0.35),
+        0 0 20px rgba(0, 255, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Textarea */
+.contact-form textarea {
+    resize: vertical;
+    min-height: 180px;
+}
+
+/* Bouton envoyer */
+.contact-form .btn {
+    align-self: center;
+    min-width: 240px;
+    padding: 1rem 2rem;
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #00ff00, #00aa33);
+    color: #001300;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.25);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Hover btn contact */
+.contact-form .btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow:
+        0 0 25px rgba(0, 255, 0, 0.45),
+        0 0 50px rgba(0, 255, 0, 0.15);
+}
+
+/* Sidebar-contact */
+.sidebar-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* TEXTES SIDEBAR form contact */
+.darkmodep {
+    color: #d7d7d7;
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+}
+
+/* ICONES form contact */
+.darkmodep i {
+    color: var(--primary-color);
+    margin-right: 0.7rem;
+}
+
+
+/* ============================================
+   Authentification
+   ============================================ */
+
 .auth-container {
     min-height: 80vh;
     display: flex;
@@ -1177,7 +1313,9 @@ code {
     font-size: 0.9rem;
 }
 
-/* Responsive */
+/* ============================================
+   RESPONSIVE
+   ============================================ */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -1221,39 +1359,45 @@ code {
     }
 
     /* Responsive about.php A propos */
-
-    /* Responsive about.php A propos */
-    @media (max-width: 768px) {
-
-        .container-about {
-            padding: 0 1rem;
-            overflow-x: hidden;
-        }
-
-        section.content-about {
-            min-height: auto;
-            overflow-y: visible;
-        }
-
-        section.content-about .content-grid {
-            grid-template-columns: 1fr;
-            gap: 24px;
-        }
-
-        section.content-about .sidebar {
-            position: static;
-        }
-
-        section.content-about .info-box {
-            max-height: none;
-            overflow: visible;
-        }
-
-        section.content-about .content-main {
-            min-height: auto;
-            padding: 1rem;
-        }
-
+    .container-about {
+        padding: 0 1rem;
+        overflow-x: hidden;
     }
 
+    section.content-about {
+        min-height: auto;
+        overflow-y: visible;
+    }
+
+    section.content-about .content-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    section.content-about .sidebar {
+        position: static;
+    }
+
+    section.content-about .info-box {
+        max-height: none;
+        overflow: visible;
+    }
+
+    section.content-about .content-main {
+        min-height: auto;
+        padding: 1rem;
+    }
+
+    /* Responsive contact.php */
+    .content-grid-contact {
+        grid-template-columns: 1fr;
+    }
+
+    .container-contact {
+        padding: 1.5rem 1rem;
+    }
+
+    .content-main-contact {
+        padding: 1.5rem;
+    }
 }
