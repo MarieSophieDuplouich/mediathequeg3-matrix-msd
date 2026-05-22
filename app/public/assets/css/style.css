@@ -148,6 +148,7 @@ h2,
 h3,
 .center {
     text-align: center;
+    color:var(--primary-color);
 }
 
 .message-contact {
