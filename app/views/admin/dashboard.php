@@ -169,7 +169,8 @@
                                     width="20"
                                     height="20"
                                     viewBox="0 0 24 24"
-                                    fill="none"
+                                    fill="none"git fetch origin
+git checkout 18-css-media-aameliorer
                                     stroke="rgb(0,255,10)"
                                     stroke-width="2"
                                     stroke-linecap="round"
