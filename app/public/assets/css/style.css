@@ -44,11 +44,25 @@ html {
 }
 
 /* Couleurs des boutons jaunes */
-.btn-beige1 { background-color: #FFF9C4; }
-.btn-beige2 { background-color: #FFF9C4; }
-.btn-beige3 { background-color: #FFF9C4; }
-.btn-beige4 { background-color: #FFF9C4; }
-.btn-beige5 { background-color: #FFF9C4; }
+.btn-beige1 {
+    background-color: #FFF9C4;
+}
+
+.btn-beige2 {
+    background-color: #FFF9C4;
+}
+
+.btn-beige3 {
+    background-color: #FFF9C4;
+}
+
+.btn-beige4 {
+    background-color: #FFF9C4;
+}
+
+.btn-beige5 {
+    background-color: #FFF9C4;
+}
 
 /* Reset et base */
 
@@ -176,8 +190,13 @@ section {
 }
 
 @keyframes animateBg {
-    0%   { filter: hue-rotate(0deg); }
-    100% { filter: hue-rotate(360deg); }
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
 }
 
 section p {
@@ -207,10 +226,10 @@ section p span:hover {
 }
 
 
-/* ============================================
-   about.php A propos MS
-   layout grid avec image building et horaires
-   ============================================ */
+
+/* about.php A propos MS
+   layout grid avec image building et horaires */
+
 
 .container-about {
     max-width: 1200px;
@@ -303,9 +322,9 @@ section.content-about .info-box p:last-child {
 }
 
 
-/* ============================================
-   Layout général
-   ============================================ */
+/* 
+   Layout général */
+
 
 .container {
     max-width: 1200px;
@@ -976,6 +995,13 @@ textarea {
 }
 
 /* Formulaires — dashboard, auth, etc. */
+
+form,
+.auth-container {
+    position: relative;
+    z-index: 12;
+}
+
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -1005,9 +1031,7 @@ textarea {
 }
 
 
-/* ============================================
-   contact.php — Form contact MS
-   ============================================ */
+/* contact.php — Form contact MS*/
 
 /* autoscroll contact — override section global */
 section.content {
@@ -1015,6 +1039,8 @@ section.content {
     min-height: 100vh;
     overflow-y: auto;
     padding: 40px 0;
+    position: relative;
+    z-index: 12;
 }
 
 /* container spécifique contact */
