@@ -74,7 +74,7 @@
     <div class="center">
 
         <!-- Lien pour ajouter un nouveau média -->
-        <a href="<?= url('admin/add') ?>" class="btn-add-media">➕ Ajouter un Media</a>
+        <a href="<?= url('admin/add') ?>" class="btn-add-media">+ Ajouter un Media</a>
 
         <div class="admin-actions" style="margin: 20px 0; display: flex; flex-wrap: wrap; gap: 12px;">
             <a class="btn-admin btn-beige1" href="<?= url('admin/current_loans_by_users') ?>">Emprunts en cours par
