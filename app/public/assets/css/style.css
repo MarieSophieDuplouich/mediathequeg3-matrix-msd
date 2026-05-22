@@ -41,27 +41,53 @@ html {
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
     /* Ombre blanche */
     transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    z-index: 12;
+}
+
+.btn-add-media:hover {
+    background-color: #33a3ee;
+    color: white;
 }
 
 /* Couleurs des boutons jaunes */
 .btn-beige1 {
     background-color: #FFF9C4;
+    position: relative;
+    z-index: 12;
 }
 
 .btn-beige2 {
     background-color: #FFF9C4;
+    position: relative;
+    z-index: 12;
 }
 
 .btn-beige3 {
     background-color: #FFF9C4;
+    position: relative;
+    z-index: 12;
 }
 
 .btn-beige4 {
     background-color: #FFF9C4;
+    position: relative;
+    z-index: 12;
 }
 
 .btn-beige5 {
     background-color: #FFF9C4;
+    position: relative;
+    z-index: 12;
+}
+
+.btn-beige1:hover,
+.btn-beige2:hover,
+.btn-beige3:hover,
+.btn-beige4:hover,
+.btn-beige5:hover {
+    background-color: #33a3ee;
+    color: white;
 }
 
 /* Reset et base */
@@ -73,17 +99,20 @@ table {
     margin: 15px auto;
     /* Centre horizontalement */
     font-size: 14px;
+    color: white;
+    position: relative;
+    z-index: 12;
 }
 
 th,
 td {
-    border: 1px solid #ddd;
+    border: 1px solid var(--primary-color);
     padding: 8px 12px;
     text-align: center;
 }
 
 th {
-    background-color: #f4f4f4;
+    background-color: var(--primary-color);
 }
 
 .page-header h1 {
@@ -111,19 +140,9 @@ th {
 /* Style général pour tous les boutons d'action */
 .action-btn {
     display: flex;
-    /* Affichage en ligne-bloc */
-    padding: 8px 12px;
-    /* Espacement intérieur */
-    margin: 2px 4px;
-    /* Espacement entre les boutons */
-    background-color: #434040;
-    /* Fond sombre (cohérent avec votre design) */
-    color: white;
-    /* Texte blanc */
-    border: 1px solid var(--primary-color);
-    /* Bordure jaune */
-    border-radius: 5px;
-    /* Coins arrondis */
+    justify-content:center;
+    align-items: center;
+    margin-bottom: 2rem;
     text-decoration: none;
     /* Supprime le soulignement des liens */
     font-size: 14px;
@@ -136,6 +155,36 @@ th {
     /* Transition douce */
     vertical-align: middle;
     /* Alignement vertical */
+
+}
+
+.action-btn:hover {
+    background-color: #33a3ee;
+    color: white;
+    padding: 10px 20px;
+}
+.action-btn-delete-image {
+    background-color: transparent;
+    color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-btn-delete-image:hover {
+    background-color: #33a3ee;
+    color: white;
+    padding: 10px 20px;
+}
+
+.form-dashboard{
+    background-color: transparent;
+    border:none;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: transparent;
 }
 
 .media-link {
@@ -147,6 +196,7 @@ h2,
 h3,
 .center {
     text-align: center;
+    color: var(--primary-color);
 }
 
 .message-contact {
@@ -516,6 +566,8 @@ section.content-about .info-box p:last-child {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+    z-index: 12;
 }
 
 .btn.btn-primary {

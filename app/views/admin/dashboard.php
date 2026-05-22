@@ -74,7 +74,7 @@
     <div class="center">
 
         <!-- Lien pour ajouter un nouveau média -->
-        <a href="<?= url('admin/add') ?>" class="btn-add-media">➕ Ajouter un Media</a>
+        <a href="<?= url('admin/add') ?>" class="btn-add-media">+ Ajouter un Media</a>
 
         <div class="admin-actions" style="margin: 20px 0; display: flex; flex-wrap: wrap; gap: 12px;">
             <a class="btn-admin btn-beige1" href="<?= url('admin/current_loans_by_users') ?>">Emprunts en cours par
@@ -99,7 +99,8 @@
             <!-- Boucle sur les médias pour les afficher -->
             <?php foreach ($medias as $m): ?>
                 <tr>
-                    <td><img <?php $cover = cover_path($m['cover'] ?? ''); // compute cover ?> src="<?= url($cover) ?>"
+                    <td><img <?php $cover = cover_path($m['cover'] ?? ''); // compute cover 
+                                ?> src="<?= url($cover) ?>"
                             alt="Couverture de <?= e($m['title'] ?? '') ?>" alt="Couverture de <?= e($m['title']) ?>"
                             class="img-index"><?= e($m['title']) ?></td>
                     <!-- Affiche le type du média (Livre, Film, Jeu, ou Inconnu) -->
@@ -107,15 +108,82 @@
                     </td>
                     <td><?= e($m['stock']) ?></td>
                     <td class="actions">
-                        <!-- Lien pour éditer le média -->
-                        <a href="<?= url('admin/edit/' . $m['id']) ?>" class="action-btn">✏️ Modifier</a>
-                        <!-- Lien pour supprimer le média, confirmation demandée -->
-                        <a href="<?= url('admin/delete/' . $m['id']) ?>" class="action-btn"
-                            onclick="return confirm('Delete?')">🗑️ Supprimer</a>
-                        <!-- Bouton pour supprimer l'image du média -->
-                        <form method="post" action="<?= url('admin/delete_image/' . $m['id']) ?>
-                            <button type=" submit" class="action-btn"
-                            onclick="return confirm('Supprimer l\'image de ce média ?')">🖼️ Supprimer image</button>
+
+                        <!-- Edit -->
+                        <a href="<?= url('admin/edit/' . $m['id']) ?>" class="action-btn">
+
+                            <!-- SVG crayon -->
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="rgb(0,255,10)"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+
+                                <path d="M12 20h9" />
+                                <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
+
+                            </svg>
+
+                        </a>
+
+                        <!-- Delete -->
+                        <a href="<?= url('admin/delete/' . $m['id']) ?>"
+                            class="action-btn"
+                            onclick="return confirm('Delete?')">
+
+                            <!-- SVG poubelle -->
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="rgb(0,255,10)"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round">
+
+                                <path d="M3 6h18" />
+                                <path d="M8 6V4h8v2" />
+                                <path d="M19 6l-1 14H6L5 6" />
+                                <path d="M10 11v6" />
+                                <path d="M14 11v6" />
+
+                            </svg>
+
+                        </a>
+
+                        <!-- Delete image -->
+                        <form class="form-dashboard" method="post"
+                            action="<?= url('admin/delete_image/' . $m['id']) ?>">
+
+                            <button type="submit"
+                                class="action-btn-delete-image"
+                                onclick="return confirm('Supprimer l\'image de ce média ?')">
+
+                                <!-- SVG image supprimée -->
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="rgb(0,255,10)"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round">
+
+                                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                                    <circle cx="9" cy="9" r="2" />
+                                    <path d="M21 15l-5-5L5 21" />
+                                    <path d="M3 3l18 18" />
+
+                                </svg>
+
+                            </button>
+
                         </form>
 
                     </td>
@@ -136,14 +204,14 @@
                 <!-- Boucle sur tous les emprunts et affiche seulement ceux non rendus -->
                 <?php foreach ($loans as $e): ?>
                     <?php if (!$e['actual_return_date']): ?>
-                    <tr>
-                        <td><?= e($e['user_name']) ?></td>
-                        <td><?= e($e['media_title']) ?></td>
-                        <td><?= e($e['loan_date']) ?></td>
-                        <td><?= e($e['expected_return_date']) ?></td>
-                        <!-- Lien pour enregistrer le retour du média -->
-                        <td><a href="<?= url('admin/retour/' . $e['id']) ?>" class="action-btn">✅ Retour</a></td>
-                    </tr>
-                <?php endif; ?>
-            <?php endforeach; ?>
+            <tr>
+                <td><?= e($e['user_name']) ?></td>
+                <td><?= e($e['media_title']) ?></td>
+                <td><?= e($e['loan_date']) ?></td>
+                <td><?= e($e['expected_return_date']) ?></td>
+                <!-- Lien pour enregistrer le retour du média -->
+                <td><a href="<?= url('admin/retour/' . $e['id']) ?>" class="action-btn">✅ Retour</a></td>
+            </tr>
+        <?php endif; ?>
+    <?php endforeach; ?>
         </table>
