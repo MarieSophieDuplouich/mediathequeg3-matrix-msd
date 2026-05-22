@@ -73,17 +73,18 @@ table {
     margin: 15px auto;
     /* Centre horizontalement */
     font-size: 14px;
+    color:white;
 }
 
 th,
 td {
-    border: 1px solid #ddd;
+    border: 1px solid var(--primary-color);
     padding: 8px 12px;
     text-align: center;
 }
 
 th {
-    background-color: #f4f4f4;
+    background-color: var(--primary-color);
 }
 
 .page-header h1 {
@@ -516,6 +517,8 @@ section.content-about .info-box p:last-child {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+    z-index: 12;
 }
 
 .btn.btn-primary {
