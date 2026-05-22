@@ -66,7 +66,7 @@ $cover = !empty($m['cover']) ? url('uploads/covers/' . $m['cover']) : url('asset
     <?php elseif ((int)$item['stock'] > 0): // emprunter ?>
       <form method="post" action="<?= url('media/loan/'.$item['id']) ?>" onsubmit="return confirm('Confirmer l\'emprunt ?');">
         <input type="hidden" name="csrf_token" value="<?= csrf_token() ?>"> <!-- csrf -->
-        <button>Emprunter</button>
+        <button class="emprunt-btn">Emprunter</button>
       </form>
     <?php else: // out of stock ?>
       <span>Ce média n'est pas disponible.</span>

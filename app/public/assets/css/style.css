@@ -140,7 +140,7 @@ th {
 /* Style général pour tous les boutons d'action */
 .action-btn {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
     text-decoration: none;
@@ -163,6 +163,7 @@ th {
     color: white;
     padding: 10px 20px;
 }
+
 .action-btn-delete-image {
     background-color: transparent;
     color: transparent;
@@ -178,10 +179,10 @@ th {
     padding: 10px 20px;
 }
 
-.form-dashboard{
+.form-dashboard {
     background-color: transparent;
-    border:none;
-    display:flex;
+    border: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     color: transparent;
@@ -883,6 +884,31 @@ textarea {
     /* Taille de police */
     font-weight: bold;
     /* Texte en gras */
+}
+
+.media-detail {
+    color: var(--primary-color);
+    text-align:center;
+}
+
+.media-card1{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.emprunt-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.emprunt-btn:hover {
+    background-color:  #33a3ee;
 }
 
 /* Style pour les liens dans media-detail-title */
