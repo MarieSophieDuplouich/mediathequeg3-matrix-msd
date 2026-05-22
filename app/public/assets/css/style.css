@@ -161,6 +161,30 @@ th {
 .action-btn:hover {
     background-color: #33a3ee;
     color: white;
+    padding: 10px 20px;
+}
+.action-btn-delete-image {
+    background-color: transparent;
+    color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-btn-delete-image:hover {
+    background-color: #33a3ee;
+    color: white;
+    padding: 10px 20px;
+}
+
+.form-dashboard{
+    background-color: transparent;
+    border:none;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: transparent;
 }
 
 .media-link {

@@ -157,11 +157,11 @@
                         </a>
 
                         <!-- Delete image -->
-                        <form method="post"
+                        <form class="form-dashboard" method="post"
                             action="<?= url('admin/delete_image/' . $m['id']) ?>">
 
                             <button type="submit"
-                                class="action-btn"
+                                class="action-btn-delete-image"
                                 onclick="return confirm('Supprimer l\'image de ce média ?')">
 
                                 <!-- SVG image supprimée -->
