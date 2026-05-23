@@ -6,7 +6,7 @@ require_once ROOT_PATH . '/includes/helpers.php';
  * in: "livre"/1/"film"/"game" etc
  * out: 1=livre, 2=film, 3=jeu, sinon null
  */
-function _type_to_id($type) {
+function _type_to_id(mixed $type): ?int{
     if (is_null($type) || $type === '') return null; // rien -> null
     if (is_numeric($type)) return (int)$type; // déjà id -> int
 
@@ -149,7 +149,7 @@ function media_list_dispo(int $limit, int $offset, ?string $q = null, $type = nu
 }
 
 // media + details full
-function media_get($id) {
+function media_get(int $id): ?array {
     return db_select_one(
         "SELECT 
             m.*,
@@ -163,7 +163,9 @@ function media_get($id) {
 
 // alias si non existant
 if (!function_exists('get_media_by_id')) {
-    function get_media_by_id($id) { return media_get($id); } // alias simple
+    function get_media_by_id(int $id): ?array {
+        return media_get($id);
+    }
 }
 
 // emprunt actif pour user/media
@@ -178,7 +180,7 @@ function get_active_loan_for(int $user_id, int $media_id): ?array {
 }
 
 // règles / count loans actifs user
-function loan_count_active($user_id) {
+function loan_count_active(int $user_id): int  {
     $row = db_select_one(
         "SELECT COUNT(*) AS c FROM loans WHERE user_id=? AND actual_return_date IS NULL",
         [$user_id]
@@ -187,7 +189,7 @@ function loan_count_active($user_id) {
 }
 
 // emprunter media
-function media_borrow_item($user_id, $media_id) {
+function media_borrow_item(int $user_id, int $media_id): string  {
     require_login(); // must auth
 
     // max 3 emprunts
@@ -226,7 +228,7 @@ function media_borrow_item($user_id, $media_id) {
 }
 
 // rendre media
-function media_return_item($user_id, $media_id) {
+function media_return_item(int $user_id, int $media_id): void  {
     require_login(); // must auth
     db_begin_transaction(); // tx start
     try {
