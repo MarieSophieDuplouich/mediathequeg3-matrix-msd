@@ -97,7 +97,10 @@
         <input type="text" name="author" value="<?= e($media['author'] ?? '') ?>" maxlength="100">
 
         <label>ISBN</label>
-        <input type="text" name="isbn" value="<?= e($media['isbn'] ?? '') ?>" pattern="\d{10}|\d{13}" maxlength="13">
+        <input type="text" name="isbn" value="<?= e($media['isbn'] ?? '') ?>" pattern="\d{10}|\d{13}" maxlength="13"
+        placeholder="10 ou 13 chiffres sans tirets"
+       title="ISBN : 10 ou 13 chiffres sans espaces ni tirets"
+        >
 
         <label>Nombre de pages</label>
         <input type="number" name="pages" value="<?= e($media['pages'] ?? '') ?>" min="1" max="9999">

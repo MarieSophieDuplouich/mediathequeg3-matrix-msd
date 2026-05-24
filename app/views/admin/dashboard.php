@@ -211,7 +211,7 @@ git checkout 18-css-media-aameliorer
                 <td><?= e($e['loan_date']) ?></td>
                 <td><?= e($e['expected_return_date']) ?></td>
                 <!-- Lien pour enregistrer le retour du média -->
-                <td><a href="<?= url('admin/retour/' . $e['id']) ?>" class="action-btn">✅ Retour</a></td>
+                <td><a href="<?= url('admin/retour/' . $e['id']) ?>" class="action-btn">Retour</a></td>
             </tr>
         <?php endif; ?>
     <?php endforeach; ?>
