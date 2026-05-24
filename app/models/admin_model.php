@@ -421,21 +421,17 @@ function search_medias(string $q = '', ?int $type_id = null, string $genre = '',
 // Liste des types de médias pour la vue admin
 function admin_type_list_for_view(): array
 {
-    // Récupère tous les types depuis la table type
     $rows = db_select("SELECT id, movies, books, games FROM type ORDER BY id");
     $out = [];
     foreach ($rows as $r) {
         $label = 'Inconnu';
-        // Définit le label selon le type
-        if (!empty($r['books']))
-            $label = 'Livre';
-        if (!empty($r['movies']))
-            $label = 'Film';
-        if (!empty($r['games']))
-            $label = 'Jeu';
+
+        if (!empty($r['books']))       $label = 'Livre';
+        elseif (!empty($r['movies']))  $label = 'Film';
+        elseif (!empty($r['games']))   $label = 'Jeu';
 
         $out[] = [
-            'id' => (int) $r['id'],
+            'id'    => (int) $r['id'],
             'label' => $label,
         ];
     }
